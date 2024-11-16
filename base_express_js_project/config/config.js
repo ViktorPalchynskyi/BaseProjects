@@ -12,8 +12,13 @@ const dbURI = {
 };
 
 module.exports = {
-    mongodb: {
-        uri: dbURI[process.env.NODE_ENV],
+    db: {
+        port: process.env.DB_PORT,
+        host: dbURI[process.env.NODE_ENV],
+        name: process.env.DB_NAME,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        dialect: process.env.DB_DIALECT,
     },
     server: {
         port: 3000,
